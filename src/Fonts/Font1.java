@@ -5,14 +5,14 @@ import java.util.Map;
 public class Font1 implements FontInterface {
     private final Map<Character, String[]> glyphs = Map.ofEntries(
             Map.entry('1', new String[]{
-                    "    $$\\      ",
-                    "  $$$$ |     ",
-                    "  \\_$$ |     ",
-                    "    $$ |     ",
-                    "    $$ |     ",
-                    "    $$ |     ",
-                    "  $$$$$$\\    ",
-                    "  \\______|   "}),
+                    "    $$\\    ",
+                    "  $$$$ |   ",
+                    "  \\_$$ |   ",
+                    "    $$ |   ",
+                    "    $$ |   ",
+                    "    $$ |   ",
+                    "  $$$$$$\\  ",
+                    "  \\______| "}),
             Map.entry('2', new String[]{
                     "   $$$$$$\\    ",
                     "  $$  __$$\\   ",
@@ -21,16 +21,16 @@ public class Font1 implements FontInterface {
                     "  $$  ____/   ",
                     "  $$ |        ",
                     "  $$$$$$$$\\   ",
-                    "   \\________|"}),
+                    "  \\________|  "}),
             Map.entry('3', new String[]{
-                    "   $$$$$$\\    ",
-                    "  $$ ___$$\\   ",
-                    "  \\_/   $$ |  ",
-                    "    $$$$$ /   ",
-                    "    \\___$$\\   ",
-                    "  $$\\   $$ |  ",
-                    "  \\$$$$$$  |  ",
-                    "    \\______/  "}),
+                    "   $$$$$$\\   ",
+                    "  $$ ___$$\\  ",
+                    "  \\_/   $$ | ",
+                    "    $$$$$ /  ",
+                    "    \\___$$\\  ",
+                    "  $$\\   $$ | ",
+                    "  \\$$$$$$  | ",
+                    "   \\______/  "}),
             Map.entry('4', new String[]{
                     "  $$\\   $$\\   ",
                     "  $$ |  $$ |  ",
@@ -39,7 +39,7 @@ public class Font1 implements FontInterface {
                     "  \\_____$$ |  ",
                     "        $$ |  ",
                     "        $$ |  ",
-                    "          \\__| "}),
+                    "        \\__|  "}),
             Map.entry('5', new String[]{
                     "  $$$$$$$\\    ",
                     "  $$  ____|   ",
@@ -48,7 +48,7 @@ public class Font1 implements FontInterface {
                     "  \\_____$$\\   ",
                     "  $$\\   $$ |  ",
                     "  \\$$$$$$  |  ",
-                    "   \\______/  "}),
+                    "   \\______/   "}),
             Map.entry('6', new String[]{
                     "   $$$$$$\\    ",
                     "  $$  __$$\\   ",
@@ -57,7 +57,7 @@ public class Font1 implements FontInterface {
                     "  $$  __$$\\   ",
                     "  $$ /  $$ |  ",
                     "   $$$$$$  |  ",
-                    "   \\______/  "}),
+                    "   \\______/   "}),
             Map.entry('7', new String[]{
                     "  $$$$$$$$\\   ",
                     "  \\____$$  |  ",
@@ -66,7 +66,7 @@ public class Font1 implements FontInterface {
                     "    $$  /     ",
                     "   $$  /      ",
                     "  $$  /       ",
-                    "  \\__/      "}),
+                    "  \\__/        "}),
             Map.entry('8', new String[]{
                     "   $$$$$$\\    ",
                     "  $$  __$$\\   ",
@@ -84,16 +84,16 @@ public class Font1 implements FontInterface {
                     "   \\____$$ |  ",
                     "  $$\\   $$ |  ",
                     "  \\$$$$$$  |  ",
-                    "  \\______/   "}),
+                    "   \\______/   "}),
             Map.entry('0', new String[]{
-                    "   $$$$$$\\  ",
-                    "  $$$ __$$\\ ",
-                    "  $$$$\\ $$ |",
-                    "  $$\\$$\\$$ |",
-                    "  $$ \\$$$$ |",
-                    "  $$ |\\$$$ |",
-                    "  \\$$$$$$  /",
-                    "   \\______/ "}),
+                    "   $$$$$$\\    ",
+                    "  $$$ __$$\\   ",
+                    "  $$$$\\ $$ |  ",
+                    "  $$\\$$\\$$ |  ",
+                    "  $$ \\$$$$ |  ",
+                    "  $$ |\\$$$ |  ",
+                    "  \\$$$$$$  /  ",
+                    "   \\______/   "}),
             Map.entry(':', new String[]{
                     "        ",
                     "        ",
@@ -102,7 +102,7 @@ public class Font1 implements FontInterface {
                     "        ",
                     "  $$\\   ",
                     "  \\__|  ",
-                    "        ",})
+                    "        "})
 
     );
 
@@ -115,18 +115,15 @@ public class Font1 implements FontInterface {
     @Override
     public int getGlyphHeight() throws InvalidGlyphFormatException {
 
-        int buffer = 0;
-        int length = 0;
-        for (Character key : glyphs.keySet()) {
-                length = glyphs.get(key).length;
-            for (Character key2 : glyphs.keySet()){
-                buffer = glyphs.get(key2).length;
-                if(length != buffer){
-                    throw new InvalidGlyphFormatException("Invalid font: Height mismatch");
-                }
+        int prev = -1;
+
+        for (String[] glyph : glyphs.values()) {
+            if (prev != -1 && prev != glyph.length) {
+                throw new InvalidGlyphFormatException("Invalid font: Height mismatch");
             }
+            prev = glyph.length;
         }
-        return length;
+        return prev;
     }
 
     @Override
