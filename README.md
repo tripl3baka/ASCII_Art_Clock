@@ -1,5 +1,5 @@
 # ASCII-Art Clock
-![img.png](img.png)
+![assets/screenshot.png](assets/screenshot.png)
 This terminal program displays current time with beautiful ASCII-Art characters!
 
 Fonts are being held in separate classes as map of entries , allowing the user to add infinite amout of custom fonts.
