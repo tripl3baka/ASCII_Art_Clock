@@ -110,8 +110,6 @@ public class Font1 extends FontProperties {
     public Map<Character, String[]> getGlyphs(){
         return glyphs;
     }
-
-
 }
 
 
