@@ -1,10 +1,8 @@
 package Rendering;
 
-import Fonts.FontInterface;
-
-import java.util.Calendar;
+import Fonts.FontProperties;
 
 public interface RendererInterface {
 
-    public String render(String input, FontInterface font);
+    public String render(String input, FontProperties font);
 }

@@ -1,11 +1,11 @@
 package Rendering;
 
-import Fonts.FontInterface;
+import Fonts.FontProperties;
 import Fonts.InvalidGlyphFormatException;
 
 public class Renderer implements RendererInterface {
     private int glyphHeight;
-    public Renderer(FontInterface font) {
+    public Renderer(FontProperties font) {
 
         try {
             glyphHeight = font.getGlyphHeight();
@@ -15,7 +15,7 @@ public class Renderer implements RendererInterface {
     }
 
     @Override
-    public String render(String input, FontInterface font) {
+    public String render(String input, FontProperties font) {
         StringBuilder builder = new StringBuilder();
 
         for (int i = 0; i < glyphHeight; i++) {

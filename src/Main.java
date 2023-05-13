@@ -1,6 +1,6 @@
 import Fonts.Font1;
 import Fonts.Font2;
-import Fonts.FontInterface;
+import Fonts.FontProperties;
 import Rendering.Renderer;
 
 import java.util.Calendar;
@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Main {
     StringBuilder st = new StringBuilder();
     Renderer renderer = new Renderer(font);
-    static FontInterface font = new Font1(); //default font
+    static FontProperties font = new Font1(); //default font
 
     public static void main(String[] args) {
 

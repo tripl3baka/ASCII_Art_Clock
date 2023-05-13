@@ -1,18 +1,12 @@
 package Fonts;
 
-public class Font2 implements FontInterface{
-    @Override
-    public String[] getGlyph(Character c) {
-        return new String[0];
-    }
+import java.util.Map;
 
-    @Override
-    public int getGlyphHeight() throws InvalidGlyphFormatException {
-        return 0;
-    }
+public class Font2 extends FontProperties {
 
+    Map<Character, String[]> glyphs = Map.ofEntries();
     @Override
-    public boolean hasGlyph(Character c) {
-        return false;
+    public Map<Character, String[]> getGlyphs(){
+        return glyphs;
     }
 }

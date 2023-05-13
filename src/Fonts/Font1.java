@@ -2,7 +2,7 @@ package Fonts;
 
 import java.util.Map;
 
-public class Font1 implements FontInterface {
+public class Font1 extends FontProperties {
     private final Map<Character, String[]> glyphs = Map.ofEntries(
             Map.entry('1', new String[]{
                     "    $$\\    ",
@@ -106,29 +106,9 @@ public class Font1 implements FontInterface {
 
     );
 
-
     @Override
-    public String[] getGlyph(Character c) {
-        return glyphs.get(c);
-    }
-
-    @Override
-    public int getGlyphHeight() throws InvalidGlyphFormatException {
-
-        int prev = -1;
-
-        for (String[] glyph : glyphs.values()) {
-            if (prev != -1 && prev != glyph.length) {
-                throw new InvalidGlyphFormatException("Invalid font: Height mismatch");
-            }
-            prev = glyph.length;
-        }
-        return prev;
-    }
-
-    @Override
-    public boolean hasGlyph(Character c) {
-        return glyphs.containsKey(c);
+    public Map<Character, String[]> getGlyphs(){
+        return glyphs;
     }
 
 
