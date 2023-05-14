@@ -2,7 +2,7 @@ package Fonts;
 
 import java.util.Map;
 
-public class Font2 extends FontProperties {
+public class VoidFont extends FontProperties {
 
     Map<Character, String[]> glyphs = Map.ofEntries(
             Map.entry('1', new String[]{

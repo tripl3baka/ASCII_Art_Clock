@@ -5,6 +5,7 @@ import Fonts.InvalidGlyphFormatException;
 
 public class Renderer implements RendererInterface {
     private int glyphHeight;
+
     public Renderer(FontProperties font) {
 
         try {
@@ -20,8 +21,8 @@ public class Renderer implements RendererInterface {
 
         for (int i = 0; i < glyphHeight; i++) {
 
-            for (char a : input.toCharArray()){
-                if(font.hasGlyph(a)){
+            for (char a : input.toCharArray()) {
+                if (font.hasGlyph(a)) {
                     builder.append(font.getGlyph(a)[i]);
                 }
             }

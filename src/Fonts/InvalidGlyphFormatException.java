@@ -1,8 +1,8 @@
 package Fonts;
 
-public class InvalidGlyphFormatException extends Exception{
+public class InvalidGlyphFormatException extends Exception {
 
-    public InvalidGlyphFormatException(String message){
-    super(message);
+    public InvalidGlyphFormatException(String message) {
+        super(message);
     }
 }

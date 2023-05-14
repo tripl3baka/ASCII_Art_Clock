@@ -1,5 +1,5 @@
-import Fonts.Font1;
-import Fonts.Font2;
+import Fonts.BigMoneyFont;
+import Fonts.VoidFont;
 import Fonts.FontProperties;
 import Rendering.Renderer;
 
@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Main {
     StringBuilder st = new StringBuilder();
     Renderer renderer = new Renderer(font);
-    static FontProperties font = new Font1(); //default font
+    static FontProperties font = new BigMoneyFont(); //default font
 
     public static void main(String[] args) {
 
@@ -27,8 +27,8 @@ public class Main {
         System.out.print("\033[H\033[2J");
 
         switch(selInt) {
-            case 1 -> font = new Font1();
-            case 2 -> font = new Font2();
+            case 1 -> font = new BigMoneyFont();
+            case 2 -> font = new VoidFont();
         }
 
         Main main = new Main();

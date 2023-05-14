@@ -2,7 +2,7 @@ package Fonts;
 
 import java.util.Map;
 
-public class Font1 extends FontProperties {
+public class BigMoneyFont extends FontProperties {
     private final Map<Character, String[]> glyphs = Map.ofEntries(
             Map.entry('1', new String[]{
                     "    $$\\    ",
@@ -106,7 +106,7 @@ public class Font1 extends FontProperties {
             }));
 
     @Override
-    public Map<Character, String[]> getGlyphs(){
+    public Map<Character, String[]> getGlyphs() {
         return glyphs;
     }
 }
