@@ -35,7 +35,6 @@ public class Main {
     }
 
     public Main() {
-        int exit = 0;
         while (true) {
             Calendar calendar = Calendar.getInstance();
             String hours = String.format("%02d",(Integer) calendar.get(Calendar.HOUR_OF_DAY));
