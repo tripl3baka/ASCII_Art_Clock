@@ -87,11 +87,11 @@ public class VoidFont extends FontProperties {
             }),
             Map.entry(':', new String[]{
                     "       ",
-                    "   _   ",
                     "  (_)  ",
                     "   _   ",
                     "  (_)  ",
-                    "       "
+                    "       ",
+                    "       ",
             }));
 
     @Override

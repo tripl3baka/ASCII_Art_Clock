@@ -21,7 +21,7 @@ public class Main {
         do {
             sel = sc.nextLine();
         }
-        while (Integer.parseInt(sel) < 1 || Integer.parseInt(sel) > 2);
+        while (sel.equals("") || Integer.parseInt(sel) < 1 || Integer.parseInt(sel) > 2);
         int selInt = Integer.parseInt(sel);
         sc.close();
         System.out.print("\033[H\033[2J");
@@ -37,7 +37,7 @@ public class Main {
     public Main() {
         while (true) {
             Calendar calendar = Calendar.getInstance();
-            String hours = String.format("%02d",(Integer) calendar.get(Calendar.HOUR_OF_DAY));
+            String hours = String.format("%02d",(Integer)calendar.get(Calendar.HOUR_OF_DAY));
             String minutes = String.format("%02d",(Integer)calendar.get(Calendar.MINUTE));
             String seconds = String.format("%02d",(Integer)calendar.get(Calendar.SECOND));
             st.setLength(0);
