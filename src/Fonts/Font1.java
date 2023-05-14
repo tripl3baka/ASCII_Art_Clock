@@ -102,9 +102,8 @@ public class Font1 extends FontProperties {
                     "        ",
                     "  $$\\   ",
                     "  \\__|  ",
-                    "        "})
-
-    );
+                    "        "
+            }));
 
     @Override
     public Map<Character, String[]> getGlyphs(){

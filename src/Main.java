@@ -16,7 +16,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String sel = "";
         System.out.println("Select font:");
-        System.out.print("1. Big Money" + "\n" + "2. Test");
+        System.out.print("1. Big Money" + "\n" + "2. Void");
         System.out.println();
         do {
             sel = sc.nextLine();
@@ -38,12 +38,13 @@ public class Main {
         int exit = 0;
         while (true) {
             Calendar calendar = Calendar.getInstance();
-            String hours = ((Integer) calendar.get(Calendar.HOUR_OF_DAY)).toString();
-            String minutes = ((Integer) calendar.get(Calendar.MINUTE)).toString();
-            String seconds = ((Integer) calendar.get(Calendar.SECOND)).toString();
+            String hours = String.format("%02d",(Integer) calendar.get(Calendar.HOUR_OF_DAY));
+            String minutes = String.format("%02d",(Integer)calendar.get(Calendar.MINUTE));
+            String seconds = String.format("%02d",(Integer)calendar.get(Calendar.SECOND));
             st.setLength(0);
             st.append(hours).append(":").append(minutes).append(":").append(seconds);
-            printTime();
+
+            printTime(st);
             try {
                 Thread.sleep(1000);
                 System.out.print("\033[H\033[2J");
@@ -53,7 +54,7 @@ public class Main {
         }
     }
 
-    void printTime() {
+    void printTime(StringBuilder st) {
         System.out.println(renderer.render(st.toString(), font));
     }
 }
